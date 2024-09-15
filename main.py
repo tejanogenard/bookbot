@@ -3,8 +3,12 @@ def main():
     text = get_text(book_path)
     num_words = count_words(text)
     num_chars = count_characters(text)
+    print("")
     print(f"there are {num_words} words in the Document")
-    print(f"there are {num_chars}  the Document")
+    print("")
+    print(f"{num_chars} are the unique characters and their counts")
+    print("")
+    sort_characters(num_chars)
 
 def count_words(text): 
         words = text.split()
@@ -23,9 +27,11 @@ def count_characters(text):
             num_chars[char] += 1
     return num_chars
 
+def sort_characters(num_chars):
+    char_list = list(num_chars.items())
+    char_list.sort(key=lambda x: x[1], reverse=True)
+    print(char_list)
 
-
-        
 def get_text(path):
     with open(path) as f: 
         return f.read()

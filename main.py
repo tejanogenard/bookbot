@@ -8,7 +8,7 @@ def main():
     print("")
     print(f"{num_chars} are the unique characters and their counts")
     print("")
-    sort_characters(num_chars)
+    print(sort_characters(num_chars))
 
 def count_words(text): 
         words = text.split()
@@ -29,8 +29,8 @@ def count_characters(text):
 
 def sort_characters(num_chars):
     char_list = list(num_chars.items())
-    char_list.sort(key=lambda x: x[1], reverse=True)
-    print(char_list)
+    sorted_characters = sorted(char_list, key=lambda x: x[1], reverse=True)
+    return sorted_characters
 
 def get_text(path):
     with open(path) as f: 

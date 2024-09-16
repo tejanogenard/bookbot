@@ -1,1 +1,1 @@
-BookBot is my first project!
+This Bookbot scans and reads txt files for the number of words and occurrence of each character. 

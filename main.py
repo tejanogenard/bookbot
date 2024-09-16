@@ -3,6 +3,7 @@ def main():
     text = get_text(book_path)
     num_words = count_words(text)
     num_chars = count_characters(text)
+    sorted_characters = sort_characters(num_chars)
 
     print("")
     print(f"--- Begin report of {book_path} ---")
@@ -10,8 +11,8 @@ def main():
     print(f"{num_words} words were found inside Document.")
     print(f"\n")
 
-    for char in num_chars:
-        print(f"The `{char}` character was found {num_chars[char]} times!")
+    for char, count in sorted_characters:
+        print(f"The `{char}` character was found {count}times!")
 
     print("")
     print("--- End report ---")
